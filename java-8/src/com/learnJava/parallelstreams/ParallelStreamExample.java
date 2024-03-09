@@ -41,7 +41,7 @@ public class ParallelStreamExample {
 
     public static void main(String[] args) {
 
-        System.out.println(Runtime.getRuntime().availableProcessors());
+        System.out.println("Available processor: " + Runtime.getRuntime().availableProcessors());
 
         long sequentialDuration = checkPerformanceResult(ParallelStreamExample::sum_sequential_stream,20);
         System.out.println("sequentialDuration in MilliSeconds: " + sequentialDuration);

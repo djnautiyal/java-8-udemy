@@ -18,10 +18,8 @@ public class NumericStreamBoxingUnboxingExample {
 
     public static int unBoxing(List<Integer> integerList) {
 
-       int sum =  integerList.stream()
+        return integerList.stream()
                 .mapToInt(Integer::intValue).sum();
-       return sum;
-
     }
 
     public static void main(String[] args) {

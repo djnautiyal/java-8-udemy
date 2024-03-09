@@ -26,14 +26,16 @@ public class StreamsExample {
 */
 
 
-        Map<String,List<String>> studentMap = StudentDataBase.getAllStudents().stream(). //.parallelStream dont forger.
-                filter(gpaPredicate) // Stream<Student>
+        Map<String,List<String>> studentMap = StudentDataBase.getAllStudents().stream() //.parallelStream dont forger.
+                .filter(gpaPredicate)// Stream<Student>
+                .peek(s -> System.out.println("After GPA predicate: " + s.getName()))
+                .filter(gradePredicate)
+                .peek(s -> System.out.println("After grade predicate: " + s.getName()))
                 .collect(Collectors.toMap(Student::getName ,Student::getActivities ));
 
         System.out.println("studentMap  : " + studentMap);
 
-        List<String> studentActivities = StudentDataBase.getAllStudents().
-                stream() // Stream<Student>
+        List<String> studentActivities = StudentDataBase.getAllStudents().stream() // Stream<Student>
                 .map(Student::getActivities) //<Stream<List<Activites>>
                 .flatMap(List::stream) //<Stream<String>
                 .distinct() // removes duplicates
@@ -41,9 +43,7 @@ public class StreamsExample {
 
         List<String> namesList = StudentDataBase.getAllStudents().
                 stream() // Stream<Student>
-                .peek((student -> {
-                    System.out.println(student);
-                }))
+                .peek((System.out::println))
                 .map(Student::getName) //<Stream<List<Activites>>
                 .peek(System.out::println)
                 .distinct() // removes duplicates

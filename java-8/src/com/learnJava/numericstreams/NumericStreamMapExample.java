@@ -12,9 +12,7 @@ public class NumericStreamMapExample {
     public static List<Integer> mapToObj(){
 
         List<Integer> integerList = IntStream.rangeClosed(1,5)
-                .mapToObj((i)-> {
-                    return new Integer(i);
-                })
+                .mapToObj(Integer::valueOf)
                 .collect(toList());
 
         return integerList;

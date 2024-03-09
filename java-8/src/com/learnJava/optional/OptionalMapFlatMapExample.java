@@ -28,8 +28,8 @@ public class OptionalMapFlatMapExample {
     }
 
     public static void optionalFilter(){
-
-        Optional<Student> studentOptional = StudentDataBase.getOptionalStudent()
+//        Optional<Student> studentOptional = StudentDataBase.getOptionalStudent()
+        Optional<Student> studentOptional = Optional.of(StudentDataBase.studentSupplier.get())
                 .filter(student -> student.getGpa()>=4.3);
 
         studentOptional.ifPresent(student -> System.out.println(student));

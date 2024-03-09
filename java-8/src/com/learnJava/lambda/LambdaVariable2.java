@@ -9,7 +9,7 @@ public class LambdaVariable2 {
     public static void main(String[] args) {
 
 
-        // int value =4; //effectively final
+        // int value =4; //effectively final, make it static to make it work.
         Consumer<Integer> c1 = (a) -> {
             value=6;
             //  System.out.println(i+value);

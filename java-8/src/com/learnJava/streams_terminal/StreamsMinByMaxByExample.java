@@ -14,10 +14,8 @@ public class StreamsMinByMaxByExample {
 
     public static Optional<Student> minBy(){
 
-        Optional<Student> studentOptional = StudentDataBase.getAllStudents().stream()
+        return StudentDataBase.getAllStudents().stream()
                 .collect(Collectors.minBy(Comparator.comparing(Student::getGpa)));
-
-        return studentOptional;
     }
 
     public static Optional<Student> maxBy(){

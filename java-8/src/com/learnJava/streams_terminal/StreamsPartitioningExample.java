@@ -54,6 +54,7 @@ public class StreamsPartitioningExample {
     public static void main(String[] args) {
         partitioningBy_1();
         partitioningBy_2();
+        System.out.println();
         partitioningBy_3();
     }
 }

@@ -26,7 +26,7 @@ public class StreamsJoiningExample {
 
         return StudentDataBase.getAllStudents().stream()
                 .map(Student::getName)
-                .collect(Collectors.joining("-","[","]"));
+                .collect(Collectors.joining(",","[","]"));
     }
 
     public static void main(String[] args) {

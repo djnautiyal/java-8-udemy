@@ -22,6 +22,8 @@ public class StreamsMappingExample {
                 .stream()
                 .collect(mapping(Student::getName,toList())); // this avoids the additional map intermediate operation.
 
+        System.out.println("Type of nameSet type: " + namesSet.getClass());
+        System.out.println("Type of nameList type: " + namesList.getClass());
         System.out.println("namesList : " + namesList);
 
     }

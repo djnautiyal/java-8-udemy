@@ -18,7 +18,7 @@ public class NumericStreamAggregateExample {
 
         OptionalInt max = IntStream.rangeClosed(1,50).max();
         System.out.println(max.isPresent());
-        System.out.println(max.getAsInt());
+        System.out.println(max.isPresent() ? max.getAsInt() : 0);
 
         OptionalLong min = LongStream.rangeClosed(1,50).min();
         System.out.println(min.getAsLong());

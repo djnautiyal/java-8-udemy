@@ -3,7 +3,7 @@ package com.learnJava.functionalInterfaces;
 import java.util.Comparator;
 import java.util.function.BinaryOperator;
 
-public class BinaryOperatorExample {
+public class  BinaryOperatorExample {
 
    static Comparator<Integer> comparator = (a,b) -> a.compareTo(b);
 
