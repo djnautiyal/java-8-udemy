@@ -8,10 +8,10 @@ import java.util.stream.IntStream;
 public class StreamsCountingExample {
 
     public static long count(){
-       return  StudentDataBase.getAllStudents()
-                .stream()
-                .filter(student -> student.getGpa()>=3.9)
-                .collect(Collectors.counting());
+       return StudentDataBase.getAllStudents()
+               .stream()
+               .filter(student -> student.getGpa() >= 3.9)
+               .count();
     }
 
     public static long countCharArray(char[] arr){
