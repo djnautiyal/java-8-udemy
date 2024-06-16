@@ -18,5 +18,14 @@ public class LambdaVariable1 {
             System.out.println(i);
         };
 
+        Consumer<Integer> c2 = (a) -> {
+            Integer x = i;
+            x++;
+            System.out.println(x);
+        };
+
+        c1.accept(1);
+        c2.accept(4);
+
     }
 }
