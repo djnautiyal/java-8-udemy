@@ -52,6 +52,10 @@ public class StreamsGroupingByExample {
                         summingInt(Student::getNoteBooks)));// second argument can be of any type of collector
 
         System.out.println(nameNoteBooksMap);
+
+        Map<String,Long> gpaGroupCountMap = StudentDataBase.getAllStudents().stream()
+                .collect(groupingBy(student -> student.getGpa()>=3.8 ? "Outstanding": "Average", counting()));
+        System.out.println(gpaGroupCountMap);
     }
 
     /**
@@ -119,9 +123,9 @@ public class StreamsGroupingByExample {
 //        customizedGroupingBy();
         //groupByGrade();
 //        twoLevelGrouping();
-        //twoLevelGrouping_2();
+        twoLevelGrouping_2();
         //twoLevelGrouping_3();
-        calculteTopGpaStudentinEachGrade();
+        //calculteTopGpaStudentinEachGrade();
         //calculteleastGpaStudentinEachGrade();
        // threeArgumentGroupingBy();
     }
