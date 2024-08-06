@@ -131,6 +131,13 @@ public class Questions {
                 .stream().filter(Objects::nonNull)
                 .forEach(System.out::println);
 
+        System.out.println("\n21. Partition the list into two groups: one containing even numbers and the other containing odd numbers. Additionally, provide the sum of each group.");
+        Map<Boolean, Integer> partitionedAndSummed = Arrays.stream(arr).boxed()
+                .collect(Collectors.partitioningBy(n -> n % 2 == 0,
+                        Collectors.summingInt(Integer::intValue)));
+
+        System.out.println("Sum of even numbers: " + partitionedAndSummed.get(true));
+        System.out.println("Sum of odd numbers: " + partitionedAndSummed.get(false));
 
 
     }
